@@ -12,6 +12,7 @@ import {
   Database,
   GitBranch,
   Globe2,
+  Camera,
   GraduationCap,
   Layers3,
   Mail,
@@ -25,6 +26,7 @@ type LanguageCode = "ko" | "en" | "zh" | "ja" | "fr";
 const profileLinks = {
   github: "https://github.com/Ko-kuma",
   blog: "https://dev-blog-zeta-sand.vercel.app",
+  instagram: "https://www.instagram.com/0rdinary_hz?igsh=MXgzZGVlZmIzZXlkdw%3D%3D&utm_source=qr",
 };
 
 const languageOptions: Array<{ code: LanguageCode; label: string }> = [
@@ -90,6 +92,7 @@ const copy = {
     linkLabels: {
       github: "깃허브",
       blog: "개인 블로그",
+      instagram: "Instagram",
       pending: "URL 입력 필요",
     },
     blogPosts: [
@@ -150,6 +153,7 @@ const copy = {
     linkLabels: {
       github: "GitHub",
       blog: "Personal Blog",
+      instagram: "Instagram",
       pending: "URL needed",
     },
     blogPosts: [
@@ -210,6 +214,7 @@ const copy = {
     linkLabels: {
       github: "GitHub",
       blog: "个人博客",
+      instagram: "Instagram",
       pending: "需要 URL",
     },
     blogPosts: [
@@ -270,6 +275,7 @@ const copy = {
     linkLabels: {
       github: "GitHub",
       blog: "個人ブログ",
+      instagram: "Instagram",
       pending: "URL未設定",
     },
     blogPosts: [
@@ -330,6 +336,7 @@ const copy = {
     linkLabels: {
       github: "GitHub",
       blog: "Blog personnel",
+      instagram: "Instagram",
       pending: "URL requise",
     },
     blogPosts: [
@@ -379,6 +386,7 @@ type PortfolioCopy = {
   linkLabels: {
     github: string;
     blog: string;
+    instagram: string;
     pending: string;
   };
   blogPosts: Array<{
@@ -741,6 +749,14 @@ export default function Home() {
             <span>{t.linkLabels.blog}</span>
             <small>
               {profileLinks.blog || t.linkLabels.pending}
+              <ArrowUpRight aria-hidden="true" size={15} />
+            </small>
+          </a>
+          <a className="link-card" {...disabledLinkProps(profileLinks.instagram)}>
+            <Camera aria-hidden="true" size={28} />
+            <span>{t.linkLabels.instagram}</span>
+            <small>
+              {profileLinks.instagram}
               <ArrowUpRight aria-hidden="true" size={15} />
             </small>
           </a>
